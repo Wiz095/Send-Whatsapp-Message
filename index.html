@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Send WhatsApp Message</title>
+</head>
+<body>
+  <form>
+    <label>Enter your message:</label><br>
+    <input type="text" id="message"><br>
+    <label>Enter the recipient's phone number:</label><br>
+    <input type="text" id="phone"><br>
+    <button type="submit" onclick="sendMessage()">Send</button>
+  </form>
+</body>
+</html>
+
+<script>
+  function sendMessage() {
+    // Get the user's message and phone number from the input fields
+    var message = document.getElementById("message").value;
+    var phone = document.getElementById("phone").value;
+
+    // Send the message using WhatsApp's web API
+    window.open("https://wa.me/" + phone + "?text=" + message);
+  }
+</script>
